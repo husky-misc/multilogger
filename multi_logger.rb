@@ -44,7 +44,7 @@ class MultiLogger < Logger
   # Any method not defined on standard Logger class, just send it on to anyone who will listen
   def method_missing(name, *args, &block)
     @loggers.each do |logger|
-      if logger.respond_to(name)
+      if logger.respond_to?(name)
         logger.send(name, args, &block)
       end
     end
