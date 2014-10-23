@@ -85,7 +85,7 @@ class MultiLogger < Logger
   # Create an instance.
   #
   def initialize(loggers)
-    @loggers = loggers
+    @loggers = Array(loggers)
   end
 
   # Methods that write to logs just write to each contained logger in turn
